@@ -47,6 +47,7 @@ public class ArticleController {
 
 	@RequestMapping("article/detail")
 	public String detail(Model model, long id) {
+		articleService.hitup(id);
 		Article article = articleService.getOne(id);
 		model.addAttribute("article", article);
 		return "article/detail";
@@ -54,6 +55,7 @@ public class ArticleController {
 
 	@RequestMapping("article/modify")
 	public String moidfy(Model model, long id) {
+
 		Article article = articleService.getOne(id);
 		model.addAttribute("article", article);
 		return "article/modify";
@@ -67,6 +69,20 @@ public class ArticleController {
 		String msg = id + "번째 게시글이 삭제되었습니다.";
 		sb.append("alert('" + msg + "');");
 		sb.append("location.replace('./list');");
+		sb.insert(0, "<script>");
+		sb.append("</script>");
+		return sb.toString();
+
+	}
+
+	@RequestMapping("article/doModify")
+	@ResponseBody
+	public String doModify(@RequestParam Map<String, Object> param, long id) {
+		StringBuilder sb = new StringBuilder();
+		articleService.doModify(param);
+		String msg = id + "번 게시물이 수정되었습니다.";
+		sb.append("alert('" + msg + "');");
+		sb.append("location.replace('./detail?id=" + id + "');");
 		sb.insert(0, "<script>");
 		sb.append("</script>");
 		return sb.toString();

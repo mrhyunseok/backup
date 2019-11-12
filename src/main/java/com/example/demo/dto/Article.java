@@ -12,5 +12,5 @@ public class Article {
 	private String title;
 	private String body;
 	private String regDate;
-
+	private long hit;
 }

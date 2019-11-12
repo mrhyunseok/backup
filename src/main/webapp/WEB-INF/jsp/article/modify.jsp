@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="pageName" value="게시물 수정" />
 <%@ include file="../part/head.jspf"%>
-<form action="./doAdd" method="post"
+<form action="./doModify" method="post"
 	onsubmit="modifyForm(this); return false;">
 
 	<input type="hidden" value="${article.id}" name="id">

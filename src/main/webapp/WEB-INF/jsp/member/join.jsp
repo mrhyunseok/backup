@@ -6,7 +6,7 @@
 <form action="./dojoin" method="post"
 	onsubmit="joinForm(this); return false;">
 	<div>
-		<span>아이디</span> <input type="text" placeholder="제목" name="title">
+		<span>아이디</span> <input type="text" placeholder="아이디" name="loginId">
 	</div>
 	<div>
 		<span>비밀번호</span> <input type="password" placeholder="비밀번호"

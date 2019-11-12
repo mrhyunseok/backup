@@ -18,4 +18,8 @@ public interface ArticleDao {
 
 	public void doDelete(long id);
 
+	public void doModify(Map<String, Object> param);
+
+	public void hitup(long id);
+
 }
