@@ -21,3 +21,17 @@ hit = 0;
 
 
 
+CREATE TABLE `member`(
+id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+PRIMARY KEY(id),
+loginId CHAR(100) NOT NULL,
+loginPw CHAR(10) NOT NULL,
+regDate DATETIME NOT NULL
+);
+
+INSERT INTO MEMBER SET loginId = 'user1',
+loginPw = 'user1',
+regDate= NOW();
+
+
+
