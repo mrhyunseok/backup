@@ -61,3 +61,18 @@ function joinForm(form) {
 	form.submit();
 
 }
+
+function loginForm(form) {
+	form.loginId.value = form.loginId.value.trim();
+	if (form.loginId.value.length == 0) {
+		alert('로그인 아이디를 입력해주세요');
+		form.loginId.focus();
+		return false;
+	}
+	form.loginPw.value = form.loginPw.value.trim();
+	if (form.loginPw.value.length == 0) {
+		alert('로그인 비밀번호 입력해주세요');
+		form.loginPw.focus();
+		return false;
+	}
+}
