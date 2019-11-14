@@ -2,12 +2,15 @@ package com.example.demo.controller;
 
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.example.demo.dto.Member;
 import com.example.demo.service.MemberService;
 
 @Controller
@@ -44,5 +47,20 @@ public class MemberController {
 		return "common/redirect";
 
 	}
+
+	/*@RequestMapping("member/doLogin")
+	//public String doLogin(@RequestParam Map<String,Object> param, Model model, HttpSession session) {
+		Member memberMatch = memberService.getMatchOne((String)param.get("loginId"),(String)param.get("loginPw"));
+		
+		if(memberMatch == null) {
+			model.addAttribute("alertMsg", "일치하는 회원이 존재하지않습니다.");
+			model.addAttribute("historyBack", true);
+			return "common/redirect";
+			
+		}
+		
+	//session.setAttribute("loginIdMemberId", matchMember);
+		return ""
+	}*/
 
 }

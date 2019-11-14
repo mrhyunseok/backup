@@ -75,4 +75,5 @@ function loginForm(form) {
 		form.loginPw.focus();
 		return false;
 	}
+	form.submit();
 }

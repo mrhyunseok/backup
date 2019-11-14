@@ -6,21 +6,23 @@
 <form action="./doJoin" method="post"
 	onsubmit="joinForm(this); return false;">
 	<div>
-		<span>아이디</span> <input type="text" placeholder="아이디" name="loginId"
+		<span>아이디</span> <br>
+		<input type="text" placeholder="아이디" name="loginId"
 			autofocus="autofocus">
 	</div>
 	<div>
-		<span>비밀번호</span> <input type="password" placeholder="비밀번호"
+		<span>비밀번호</span><br> <input type="password" placeholder="비밀번호"
 			name="loginPw">
 	</div>
 	<div>
-		<span>비밀번호 확인</span> <input type="password" placeholder="비밀번호확인"
-			name="loginPwCheck">
+		<span>비밀번호 확인</span><br> <input type="password"
+			placeholder="비밀번호확인" name="loginPwCheck">
 
 	</div>
 	<div>
-		<span>가입</span> <input type="submit" value="회원가입"> <input
-			type="reset" value="취소">
+		<span>가입</span> <br>
+		<input type="submit" value="회원가입"> <input type="reset"
+			value="취소">
 	</div>
 </form>
 <%@ include file="../part/foot.jspf"%>
