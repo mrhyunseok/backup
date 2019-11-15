@@ -2,10 +2,14 @@ package com.example.demo.service;
 
 import java.util.Map;
 
+import com.example.demo.dto.Member;
+
 public interface MemberService {
 
-	Map<String, Object> checkLoginDupRs(String loginId);
+	public Map<String, Object> checkLoginDupRs(String loginId);
 
-	Map<String, Object> join(Map<String, Object> param);
+	public Map<String, Object> join(Map<String, Object> param);
+
+	public Member getMatchOne(String loginId, String loginPw);
 
 }

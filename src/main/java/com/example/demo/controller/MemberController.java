@@ -48,19 +48,21 @@ public class MemberController {
 
 	}
 
-	/*@RequestMapping("member/doLogin")
-	//public String doLogin(@RequestParam Map<String,Object> param, Model model, HttpSession session) {
-		Member memberMatch = memberService.getMatchOne((String)param.get("loginId"),(String)param.get("loginPw"));
-		
-		if(memberMatch == null) {
+	@RequestMapping("member/doLogin")
+	public String doLogin(@RequestParam Map<String, Object> param, Model model, HttpSession session) {
+		Member memberMatch = memberService.getMatchOne((String) param.get("loginId"), (String) param.get("loginPw"));
+
+		if (memberMatch == null) {
 			model.addAttribute("alertMsg", "일치하는 회원이 존재하지않습니다.");
 			model.addAttribute("historyBack", true);
 			return "common/redirect";
-			
+
 		}
-		
-	//session.setAttribute("loginIdMemberId", matchMember);
-		return ""
-	}*/
+
+		session.setAttribute("loginIdMemberId", memberMatch.getId());
+		model.addAttribute("alertMsg", "로그인 성공");
+		model.addAttribute("redirectUrl", "/");
+		return "common/redirect";
+	}
 
 }

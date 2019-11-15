@@ -13,4 +13,12 @@
 		loginPw =
 		#{loginPw}
 	</insert>
+	<select id="getMatchOne" parameterType="String"
+		resultType="Member">
+		SELECT * FROM
+		MEMBER WHERE
+		loginId = #{loginId} AND loginPw =
+		#{loginPw}
+	</select>
+
 </mapper>
